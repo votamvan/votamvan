@@ -7,16 +7,32 @@
   <style type="text/css">
     body {
       background-color: lightblue;
+      margin: 0px auto;
+    }
+    h1 {
+      margin-left: 25px;
     }
     .avatar {
       border-radius: 50%;
+      margin-left: 50px;
+      margin-top: 50px;
     }
-    ul.navbar {
-        list-style-type: none;
-  	margin: 0;
-  	padding: 0;
-  	overflow: hidden;
-  	background-color: #333;
+    footer {
+      width: 100%;
+      bottom: 0px;
+      margin: 0px;
+      background-color: gray;
+      color: #fff;
+      position: absolute;
+      text-align: center;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    .text-left {
+      width: 100%;
+      height: 100%;
+      margin: 10px;
+      text-align: left;
     }
   </style>
 </head>
@@ -39,12 +55,15 @@
 <!-- menu -->
 
 <!-- footer -->
-<div id="footer">
-<p id="w3c_html_logo">
-  <a href="https://validator.w3.org/check/referer">
-    <img src="images/html5_validator.png" alt="Validate" />
-  </a>
-</p>
-</div>
-  </body>
+<footer>
+  <div id="footer">
+    <p id="w3c_html_logo" class="text-left">
+      <a href="https://validator.w3.org/check/referer">
+        <img src="images/html5_validator.png" alt="Validate" />
+      </a>
+    </p>
+  </div>
+</footer>
+
+</body>
 </html>
