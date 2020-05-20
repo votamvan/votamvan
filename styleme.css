@@ -1,0 +1,37 @@
+h1 {
+    color: #FF7643;
+    font-size: 300%;
+    font-family: 'Arial'
+}
+
+h2 {
+    color: #FF7643;
+    font-family: 'Arial'
+}
+
+#highlight {
+    color: white;
+    background-color: blue;
+    font-size: 1.5em;
+}
+
+span {
+    float: left;
+    width: 0.7em;
+    font-size: 150%;
+    font-family: algerian, courier;
+    line-height: 80%;
+}
+
+strong {
+    color: yellowgreen;
+}
+
+a:link { color: red; text-decoration: none}
+a:visited { color: #000000; text-decoration: none}
+a:hover { color: #3366CC; text-decoration: underline}
+a:active { color: #000000; text-decoration: none}
+
+dt {
+    color: yellow;
+}
