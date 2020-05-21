@@ -1,5 +1,7 @@
-h1, h2, h3 {
+h1 {
     background-color: #F0F0F0;
     color: #A4A400;
     font-family: 'Lucida Sans Unicode', Helvetica, Arial, sans-serif;
+    font-size: 22pt;
+    font-weight: bold;
 }
