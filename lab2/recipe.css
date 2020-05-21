@@ -4,4 +4,15 @@ h1 {
     font-family: 'Lucida Sans Unicode', Helvetica, Arial, sans-serif;
     font-size: 22pt;
     font-weight: bold;
+    text-align: center;
+    text-decoration: underline;
+}
+
+h2 h3 {
+    background-color: #F0F0F0;
+    color: #A4A400;
+    font-family: 'Lucida Sans Unicode', Helvetica, Arial, sans-serif;
+    font-size: 18pt;
+    text-align: left;
+    text-decoration: underline;
 }
