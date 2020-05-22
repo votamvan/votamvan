@@ -146,3 +146,13 @@ body {
     text-align: center;
     border-radius: 0 0 15px 15px;
 }
+
+footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+footer img {
+    opacity: 0.5;
+}
