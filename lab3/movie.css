@@ -1,0 +1,148 @@
+body {
+    font-size: 8pt;
+    font-family: Verdana, Tahoma, serif;
+    background-image: url("./skeleton_files/background.png");
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.banner {
+    background-image: url("./skeleton_files/bannerbg.png");
+    background-repeat: repeat-x;
+    height: 50px;
+    text-align: center;
+}
+
+.banner img {
+    max-width: 100%;
+    height: 50px;
+}
+
+.header {
+    font-size: 24pt;
+    font-weight: bold;
+    text-shadow: 3px 3px #999999;
+    text-align: center;
+}
+
+.container {
+    display: block;
+}
+
+.content {
+    border: 4px solid gray;
+    border-radius: 20px;
+    margin: auto;
+    width: 800px;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 550px 250px;
+}
+
+.overall {
+    grid-row: 1;
+    background-image: url("./skeleton_files/rbg.png");
+    border-radius: 15px 0 0 0;
+}
+
+.overall img {
+    float: left;
+    border-radius: 15px 0 0 15px;
+    height: 83px;
+}
+
+.overall span {
+    color: red;
+    font-size: 48pt;
+    font-weight: bold;
+}
+
+.reviews {
+    grid-row: 2/ span 4;
+    column-count: 2;
+    column-gap: 2%;
+    padding: 2%;
+}
+
+.reviews .review-wrapper {
+    margin-bottom: 20px;
+    break-inside: avoid;
+    overflow: auto;
+}
+
+.reviews .comment-box {
+    padding: 8px;
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: gray;
+    background-color: #E8DC9B;
+    overflow: hidden;
+}
+
+.reviews .comment-box img {
+    float: left;
+    margin: 0 5px 0 0;
+}
+
+.reviews .comment-box q {
+    text-align: justify;
+    font-size: 8pt;
+    font-weight: bold;
+}
+
+.reviews p {
+    text-align: justify;
+}
+
+.reviews p img {
+    float: left;
+    margin: 0 5px 0 0;
+}
+
+.overview {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    background-color: #A2B964;
+    border-radius: 0 15px 0 0;
+}
+
+.overview img {
+    border-radius: 0 15px 0 0;
+}
+
+.general-overview {
+    margin: 10pt;
+    font-size: 8pt;
+    font-family: Arial, serif;
+}
+
+.general-overview dt {
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+.general-overview dd {
+    margin-bottom: 20px;
+}
+
+.general-overview ul {
+    padding: 0;
+    margin: 0;
+}
+
+.general-overview li {
+    list-style-type: none;
+    text-align: left;
+    display: block;
+}
+
+.indicator {
+    grid-column: 1/ span 3;
+    background-color: #A2B964;
+    text-align: center;
+    border-radius: 0 0 15px 15px;
+}
