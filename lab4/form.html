@@ -11,21 +11,23 @@
 <div class="row">
   <div class="col-75">
     <div class="container">
-      <form action="/checkout.html">
+      <form action="checkout.html" method=POST>
         <hr>
         <div class="row">
           <div class="col-50">
             <h3>Personal details</h3>
             <label for="person_fname">Full Name</label>
             <input type="text" id="person_fname" name="person_fname" placeholder="John Smith" required>
-            <label for="person_dob">Date of Birth (DD/MM/YYYY)</label>
-            <input type="text" id="person_dob" name="person_dob" placeholder="14/07/1990">
+            <label for="person_dob">Date of Birth</label>
+            <input type="date" id="person_dob" name="person_dob">
             <label for="person_ssn">SSN</label>
             <input type="text" id="person_ssn" name="person_ssn" placeholder="123-45-6789" required>
             <label for="person_email">Email</label>
-            <input type="text" id="person_email" name="person_email" placeholder="compro@miu.edu" required>
+            <input type="text" id="person_email" name="person_email" placeholder="compro@miu.edu" required
+                   pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                   title="Invalid email format">
             <label for="person_tel">Telephone number</label>
-            <input type="text" id="person_email" name="person_email" placeholder="641-123-4567">
+            <input type="tel" id="person_email" name="person_email" placeholder="641-123-4567">
           </div>
           <div class="col-50">
             <h2>Order Summary</h2>
@@ -51,18 +53,21 @@
           <div class="col-50">
             <h3>Billing Address</h3>
             <label for="bill_fname">Full Name</label>
-            <input type="text" id="bill_fname" name="bill_fname" placeholder="John Smith">
+            <input type="text" id="bill_fname" name="bill_fname" placeholder="John Smith" required>
             <label for="bill_email">Email</label>
-            <input type="text" id="bill_email" name="bill_email" placeholder="compro@miu.edu">
+            <input type="text" id="bill_email" name="bill_email" placeholder="compro@miu.edu" required
+                   pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                   title="Invalid email format">
             <label for="bill_adr">Address</label>
             <input type="text" id="bill_adr" name="bill_adr" placeholder="1000 North 4th Street">
             <label for="bill_city">City</label>
-            <input type="text" id="bill_city" name="bill_city" placeholder="Fairfield">
+            <input type="text" id="bill_city" name="bill_city" placeholder="Fairfield" required>
 
             <div class="row">
               <div class="col-50">
-                <label for="state">State</label>
-                <input type="text" id="state" name="state" placeholder="IA" list="state_list">
+                <label for="bill_state">State</label>
+                <input type="text" id="bill_state" name="bill_state" placeholder="IA" list="state_list" required
+                       pattern="^[A-Za-z]{2}$" title="Two letter state code">
                 <datalist id="state_list">
                   <option value="CA">
                   <option value="FL">
@@ -72,7 +77,8 @@
               </div>
               <div class="col-50">
                 <label for="bill_zip">Zip</label>
-                <input type="text" id="bill_zip" name="bill_zip" placeholder="52557" required>
+                <input type="text" id="bill_zip" name="bill_zip" placeholder="52557" 
+                       pattern="^([0-9]{5})$" title="Five number zip code" required>
               </div>
             </div>
           </div>
@@ -95,10 +101,35 @@
             <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" required>
             <div class="row">
               <div class="col-50">
-                <label for="expdate">Expire date (MM/YYYY)</label>
-                <input type="text" id="expdate" name="expyear" placeholder="12/2024" required>
+                <label for="exp_month">Expire month</label>
+                <select id="exp_month" name="exp_month" required>
+                  <option>January</option>
+                  <option>Feburary</option>
+                  <option>March</option>
+                  <option>April</option>
+                  <option>May</option>
+                  <option>June</option>
+                  <option>July</option>
+                  <option>August</option>
+                  <option>September</option>
+                  <option>October</option>
+                  <option>November</option>
+                  <option selected>December</option>
+                </select>
               </div>
-              <div class="col-50">
+              <div class="col-25">
+                <label for="exp_year">Expire year</label>
+                <input type="text" id="exp_year" name="exp_year" placeholder="2024" list="year_list" required>
+                <datalist id="year_list">
+                  <option value="2020">
+                  <option value="2021">
+                  <option value="2022">
+                  <option value="2023">
+                  <option value="2024">
+                  <option value="2025">
+                </datalist>
+              </div>
+              <div class="col-25">
                 <label for="cvv">CVV</label>
                 <input type="text" id="cvv" name="cvv" placeholder="352" required>
               </div>
@@ -107,29 +138,33 @@
 
         </div>
         <label>
-          <input type="checkbox" name="sameadr"> Shipping address same as billing
+          <input type="checkbox" id="sameadr" name="sameadr" onclick="myFunction()"> Shipping address same as billing
         </label>
 
         <div class="row">
           <div class="col-50">
             <h3>Shipping Address</h3>
             <label for="ship_fname">Full Name</label>
-            <input type="text" id="ship_fname" name="ship_fname" placeholder="John Smith">
+            <input type="text" id="ship_fname" name="ship_fname" placeholder="John Smith" required>
             <label for="ship_email">Email</label>
-            <input type="text" id="ship_email" name="ship_email" placeholder="compro@miu.edu">
+            <input type="text" id="ship_email" name="ship_email" placeholder="compro@miu.edu" required
+                   pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                   title="Invalid email format">
             <label for="ship_adr">Address</label>
-            <input type="text" id="ship_adr" name="ship_adr" placeholder="1000 North 4th Street">
+            <input type="text" id="ship_adr" name="ship_adr" placeholder="1000 North 4th Street" required>
             <label for="ship_city">City</label>
-            <input type="text" id="ship_city" name="ship_city" placeholder="Fairfield">
+            <input type="text" id="ship_city" name="ship_city" placeholder="Fairfield" required>
 
             <div class="row">
               <div class="col-50">
                 <label for="ship_state">State</label>
-                <input type="text" id="ship_state" name="ship_state" placeholder="IA" list="state_list">
+                <input type="text" id="ship_state" name="ship_state" placeholder="IA" 
+                       list="state_list" pattern="^[A-Za-z]{2}$" title="Two letter state code" required>
               </div>
               <div class="col-50">
                 <label for="ship_zip">Zip</label>
-                <input type="text" id="ship_zip" name="ship_zip" placeholder="52557">
+                <input type="text" id="ship_zip" name="ship_zip" placeholder="52557" 
+                       pattern="^[0-9]{5}$" title="Five number zip code" required>
               </div>
             </div>
           </div>
@@ -153,14 +188,43 @@
 </div>
 <script>
   function myFunction() {
-    var checkBox = document.getElementById("myCheck");
-    var text = document.getElementById("text");
+    var checkBox = document.getElementById("sameadr");
+    var ship_fname = document.getElementById("ship_fname");
+    var ship_email = document.getElementById("ship_email");
+    var ship_address = document.getElementById("ship_adr");
+    var ship_city = document.getElementById("ship_city");
+    var ship_state = document.getElementById("ship_state");
+    var ship_zip = document.getElementById("ship_zip");
     if (checkBox.checked == true) {
-      text.style.display = "block";
+      ship_fname.value = document.getElementById("bill_fname").value;
+      ship_email.value = document.getElementById("bill_email").value;
+      ship_address.value = document.getElementById("bill_adr").value;
+      ship_city.value = document.getElementById("bill_city").value;
+      ship_state.value = document.getElementById("bill_state").value;
+      ship_zip.value = document.getElementById("bill_zip").value;
     } else {
-       text.style.display = "none";
+      ship_fname.value = "";
+      ship_email.value = "";
+      ship_address.value = "";
+      ship_city.value = "";
+      ship_state.value = "";
+      ship_zip.value = "";
     }
   }
 </script>
+
+<!-- footer -->
+<footer>
+  <div id="footer">
+    <p id="w3c_html_logo" class="text-left">
+      <a href="https://validator.w3.org/check?uri=https://votamvan.github.io/lab4/form.html">
+        <img src="images/w3c-html.png" alt="HTML Validator" />
+      </a>
+      <a href="https://jigsaw.w3.org/css-validator/validator?uri=https://votamvan.github.io/lab4/form.html">
+        <img src="images/w3c-css.png" alt="CSS Validator" />
+      </a>
+    </p>
+  </div>
+</footer>
 </body>
 </html>
