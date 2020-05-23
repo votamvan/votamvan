@@ -27,7 +27,7 @@
                    pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
                    title="Invalid email format">
             <label for="person_tel">Telephone number</label>
-            <input type="tel" id="person_email" name="person_email" placeholder="641-123-4567">
+            <input type="tel" id="person_tel" name="person_tel" placeholder="641-123-4567">
           </div>
           <div class="col-50">
             <h2>Order Summary</h2>
@@ -85,7 +85,7 @@
 
           <div class="col-50">
             <h3>Payment Info</h3>
-            <label for="fname">Accepted Cards</label>
+            <label>Accepted Cards</label>
             <img src="images/412930.jpg" alt="Accepted Cards" width="288" height="67"/>
             <fieldset>
               <legend>Credit cards:</legend>
@@ -102,7 +102,7 @@
             <div class="row">
               <div class="col-50">
                 <label for="exp_month">Expire month</label>
-                <select id="exp_month" name="exp_month" required>
+                <select id="exp_month" name="exp_month" size=1 required>
                   <option>January</option>
                   <option>Feburary</option>
                   <option>March</option>
@@ -174,12 +174,10 @@
         <hr>
         <label>
           <input type="checkbox" name="agree" required> By clicking this check box, I hereby:
-            <ul>
-              <li>Agree and consent to the User Agreement, and the Return Policy</li>
-            </ul>
         </label>
-
-
+        <ul>
+          <li>Agree and consent to the User Agreement, and the Return Policy</li>
+        </ul>
         <input type="submit" value="Continue to checkout" class="btn">
       </form>
     </div>
