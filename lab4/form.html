@@ -12,17 +12,6 @@
   <div class="col-75">
     <div class="container">
       <form action="/checkout.html">
-        <div class="row">
-          <div class="col-25">
-            <h2>Checkout - Order Summary</h2>
-            <img src="images/dryer.jpg" alt="Samsung Dryer"/>
-            Samsung - 7.5 Cu. Ft. 9-Cycle Electric Dryer - White<br>
-            $549.99<br>
-            Item Subtotal - $549.99<br>
-            Delivery      - $190.00<br>
-            Total         - $739.99<br>
-          </div>
-        </div>
         <hr>
         <div class="row">
           <div class="col-50">
@@ -38,25 +27,48 @@
             <label for="person_tel">Telephone number</label>
             <input type="text" id="person_email" name="person_email" placeholder="641-123-4567">
           </div>
-          <div class="col-50"></div>
+          <div class="col-50">
+            <h2>Order Summary</h2>
+            <div class="order-box">
+                <div>
+                  <img src="images/dryer.jpg" alt="Samsung Dryer"/>
+                  Samsung 7.5 cu. ft. 9-Cycle Electric Dryer in White-DV42H5000EW
+                </div>
+                <hr>
+                <div class="order-box-detail">
+                  Item Subtotal - $549.99<br>
+                  Delivery      - $190.00<br>
+                </div>
+                <hr>
+                <div class="order-box-total">
+                  Total:          $739.99
+                </div>
+            </div>
+          </div>
         </div>
         <hr>
         <div class="row">
           <div class="col-50">
             <h3>Billing Address</h3>
-            <label for="fname">Full Name</label>
-            <input type="text" id="fname" name="firstname" placeholder="John Smith">
-            <label for="email">Email</label>
-            <input type="text" id="email" name="email" placeholder="compro@miu.edu">
-            <label for="adr">Address</label>
-            <input type="text" id="adr" name="address" placeholder="1000 North 4th Street">
-            <label for="city">City</label>
-            <input type="text" id="city" name="city" placeholder="Fairfield">
+            <label for="bill_fname">Full Name</label>
+            <input type="text" id="bill_fname" name="bill_fname" placeholder="John Smith">
+            <label for="bill_email">Email</label>
+            <input type="text" id="bill_email" name="bill_email" placeholder="compro@miu.edu">
+            <label for="bill_adr">Address</label>
+            <input type="text" id="bill_adr" name="bill_adr" placeholder="1000 North 4th Street">
+            <label for="bill_city">City</label>
+            <input type="text" id="bill_city" name="bill_city" placeholder="Fairfield">
 
             <div class="row">
               <div class="col-50">
                 <label for="state">State</label>
-                <input type="text" id="state" name="state" placeholder="IA">
+                <input type="text" id="state" name="state" placeholder="IA" list="state_list">
+                <datalist id="state_list">
+                  <option value="CA">
+                  <option value="FL">
+                  <option value="IA">
+                  <option value="IL">
+                </datalist>
               </div>
               <div class="col-50">
                 <label for="bill_zip">Zip</label>
@@ -69,8 +81,16 @@
             <h3>Payment Info</h3>
             <label for="fname">Accepted Cards</label>
             <img src="images/412930.jpg" alt="Accepted Cards" width="288" height="67"/>
+            <fieldset>
+              <legend>Credit cards:</legend>
+                <input type="radio" name="cc" value="visa" checked="checked" /> Visa
+                <input type="radio" name="cc" value="mastercard" /> MasterCard
+                <input type="radio" name="cc" value="discover" /> Discover
+                <input type="radio" name="cc" value="amex" /> American Express
+            </fieldset>
+            <br>
             <label for="cname">Name on Card</label>
-            <input type="text" id="cname" name="cardname" placeholder="John Smith">
+            <input type="text" id="cname" name="cardname" placeholder="John Smith" required>
             <label for="ccnum">Credit card number</label>
             <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" required>
             <div class="row">
@@ -105,7 +125,7 @@
             <div class="row">
               <div class="col-50">
                 <label for="ship_state">State</label>
-                <input type="text" id="ship_state" name="ship_state" placeholder="IA">
+                <input type="text" id="ship_state" name="ship_state" placeholder="IA" list="state_list">
               </div>
               <div class="col-50">
                 <label for="ship_zip">Zip</label>

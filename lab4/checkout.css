@@ -94,3 +94,27 @@ span.price {
       margin-bottom: 20px;
     }
   }
+
+.order-box {
+    padding: 8px;
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: gray;
+    overflow: hidden;
+    max-width: 50%;
+}
+.order-box img {
+  float: left;
+  margin: 0 20px 0 0;
+}
+
+.order-box-detail {
+  text-align: right;
+}
+
+.order-box-total {
+  text-align: right;
+  font-weight: bold;
+  font-size: 1.5em;
+}
