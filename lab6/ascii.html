@@ -10,29 +10,29 @@
 <body>
 <div class="heading">
     <h1>CS472: ASCII Animation Viewer</h1>
-    <textarea cols="80" rows="20"></textarea>
+    <textarea cols="80" rows="20" id="aav"></textarea>
 </div>
 <div class="container">
     <div class="menu">
         <fieldset>
             <legend>Play Controls:</legend>
-            <button>Start</button>
-            <button>Stop</button>
+            <button id="startBtn">Start</button>
+            <button id="stopBtn">Stop</button>
         </fieldset>
         <fieldset>
             <legend>Animation:</legend>
-            <select>
-                <option>Blank</option>
-                <option>Exercise</option>
-                <option>Juggler</option>
-                <option>Bike</option>
-                <option>Dive</option>
-                <option>Custom</option>
+            <select id="animeOpt">
+                <option value="blank">Blank</option>
+                <option value="exercise">Exercise</option>
+                <option value="juggler">Juggler</option>
+                <option value="bike">Bike</option>
+                <option value="dive">Dive</option>
+                <option value="custom">Custom</option>
             </select>
         </fieldset>
         <fieldset>
             <legend>Size:</legend>
-            <select>
+            <select id="sizeOpt">
                 <option>Tiny</option>
                 <option>Small</option>
                 <option>Medium</option>
@@ -43,7 +43,7 @@
         </fieldset>
         <fieldset>
             <legend>Speed:</legend>
-            <input type="checkbox" id="speed"><label for="speed">Turbo</label>
+            <input type="checkbox" id="speedChkBox"><label for="speed">Turbo</label>
         </fieldset>
     </div>
 </div>
