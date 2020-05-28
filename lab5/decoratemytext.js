@@ -5,10 +5,10 @@ function sayHello(){
 function handleDecoration() {
     var sampleTextElem = document.getElementById("sampleText");
     var style = window.getComputedStyle(sampleTextElem, null).getPropertyValue('font-size');
-    var fontSize = parseInt(style) + 2;
-    fontSize = Math.min(fontSize, 48);
-    // console.log(fontSize);
-    sampleTextElem.style.fontSize = fontSize + "px";
+    var fontSize = parseInt(style)*0.75 + 2;
+    fontSize = Math.min(fontSize, 100);
+    console.log(fontSize);
+    sampleTextElem.style.fontSize = fontSize + "pt";
 }
 
 function handleBling() {
