@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+}
+
+body {
+    background-color: #CCCCFF;
+    font: bold 14pt sans-serif;
+}
+
+.heading {
+    text-align: center;
+}
+
+h1 {
+    font-size: 32pt;
+    font-weight: bold;
+}
+
+textarea {
+    width: 90%;
+    height: 400px;
+    font: bold 12pt monospace;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+
+.menu {
+    display: flex;
+    text-align: center;
+}
+
+fieldset {
+    border: 5px solid black;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
