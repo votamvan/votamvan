@@ -26,3 +26,12 @@ textarea {
 	font-family: monospace;
 	font-size: 12pt;
 }
+
+div {
+	margin: 10px;
+}
+
+button {
+	text-align: center;
+	font-size: 16px;
+}
