@@ -61,6 +61,7 @@ function handleAnimation() {
 
 function initialize() {
     aavElem = document.getElementById('aav');
+    aavElem.style.fontSize = fontSizeArr["medium"];
 
     startElem = document.getElementById("startBtn");
     startElem.onclick = handleStart;
