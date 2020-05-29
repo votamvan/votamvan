@@ -1,6 +1,6 @@
 var startTimer, timerDelay = 250;
 var aavElem, startElem, stopElem, aniElem, sizeElem, speedElem;
-var currFrameIndex, frameArr;
+var currText, currFrameIndex, frameArr;
 var fontSizeArr = [];
 fontSizeArr["tiny"] = "7pt";
 fontSizeArr["small"] = "10pt";
@@ -15,6 +15,8 @@ function handleStart(){
     startElem.disabled = true;
     stopElem.disabled = false;
     aniElem.disabled = true;
+    currText = aavElem.value;
+    currFrameIndex = 0;
     startTimer = setInterval(handleAnimation, timerDelay);
 }
 
@@ -23,6 +25,8 @@ function handleStop(){
     startElem.disabled = false;
     stopElem.disabled = true;
     aniElem.disabled = false;
+    aavElem.value = currText;
+    currFrameIndex = 0;
     clearInterval(startTimer);
 }
 
