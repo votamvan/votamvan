@@ -1,18 +1,28 @@
-var startTimer;
+var startTimer, timerDelay = 250;
 var aavElem, startElem, stopElem, aniElem, sizeElem, speedElem;
 var currFrameIndex, frameArr;
+var fontSizeArr = [];
+fontSizeArr["tiny"] = "7pt";
+fontSizeArr["small"] = "10pt";
+fontSizeArr["medium"] = "12pt";
+fontSizeArr["large"] = "16pt";
+fontSizeArr["extralarge"] = "24pt";
+fontSizeArr["xxl"] = "32pt";
+
 
 function handleStart(){
     console.log("handleStart");
     startElem.disabled = true;
     stopElem.disabled = false;
-    startTimer = setInterval(handleAnimation, 250);
+    aniElem.disabled = true;
+    startTimer = setInterval(handleAnimation, timerDelay);
 }
 
 function handleStop(){
     console.log("handleStop");
     startElem.disabled = false;
     stopElem.disabled = true;
+    aniElem.disabled = false;
     clearInterval(startTimer);
 }
 
@@ -25,10 +35,19 @@ function handleAnimeChange(){
 
 function handleSizeChange(){
     console.log("handleSizeChange");
+    aavElem.style.fontSize = fontSizeArr[sizeElem.value];
 }
 
 function handleSpeed(){
     console.log("handleSpeed");
+    timerDelay = 250;
+    if (speedElem.checked == true){
+        timerDelay = 50;
+    }
+    if (startElem.disabled == true){
+        clearInterval(startTimer);
+        startTimer = setInterval(handleAnimation, timerDelay);
+    }
 }
 
 function handleAnimation() {
