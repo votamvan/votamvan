@@ -1,0 +1,18 @@
+body {
+    font-family: Arial;
+    font-size: 16px;
+}
+
+.heading {
+    margin-left: 15%;
+}
+
+.main {
+    width: 80%;
+}
+
+div.row {
+    margin: 0.5em;
+    width: 100%;
+    display: block;
+}
