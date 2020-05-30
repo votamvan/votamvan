@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 var nameElem, depositElem, btnElem, textElem;
 var accountInfoList = [];
 
@@ -7,7 +8,7 @@ var AccountFactory = function() {
     var privateCreate = function(name, deposit) {
         privateName = name;
         privateBalance = deposit;
-    }
+    };
     return { // public 
         create: function(name, deposit) { 
             privateCreate(name, deposit);
@@ -16,7 +17,7 @@ var AccountFactory = function() {
         getAccountInfo: function() {
             return "Account name: " + privateName + " \tBalance: " + privateBalance;
         }
-    }
+    };
 };
 
 function handleCreate() {
