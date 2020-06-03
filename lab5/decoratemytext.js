@@ -1,3 +1,6 @@
+(function() {
+    "use strict";
+
 function sayHello(){
     alert("Hello, world!");
 }
@@ -37,3 +40,5 @@ function initialization() {
 }
 
 window.onload = initialization;
+
+})();
