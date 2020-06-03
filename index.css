@@ -8,7 +8,7 @@ header {
   margin-bottom: 0;
 }
 
-header > ul {
+header ul {
   list-style-type: none;
 }
 
