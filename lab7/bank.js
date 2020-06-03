@@ -1,4 +1,7 @@
 /*jshint esversion: 6 */
+(function() {
+    "use strict";
+
 var nameElem, depositElem, btnElem, textElem;
 var accountInfoList = [];
 
@@ -37,3 +40,4 @@ function init() {
 }
 
 window.onload = init;
+})();

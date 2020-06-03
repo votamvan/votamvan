@@ -1,3 +1,6 @@
+(function() {
+"use strict";
+
 var startTimer, timerDelay = 250;
 var aavElem, startElem, stopElem, aniElem, sizeElem, speedElem;
 var currText, currFrameIndex, frameArr;
@@ -86,3 +89,4 @@ function initialize() {
 }
 
 window.onload = initialize;
+})();
