@@ -4,16 +4,12 @@ body {
 }
 
 header {
-  display: inline-flex;
-  vertical-align: middle;
+  margin-top: 0; 
+  margin-bottom: 0;
 }
 
-header > img {
-  margin-right: 20px;
-}
-
-header div {
-  margin: auto;
+header > ul {
+  list-style-type: none;
 }
 
 h1 {
@@ -23,7 +19,6 @@ h1 {
 .avatar {
   border-radius: 50%;
   margin-left: 50px;
-  margin-top: 50px;
 }
 
 footer {
@@ -47,7 +42,8 @@ footer {
 }
 
 .main {
-    display: flex;
+  margin-top: 0;
+  display: flex;
 }
 
 .col {
