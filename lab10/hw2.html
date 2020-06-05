@@ -1,28 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-		<title>Output Comparison Tool</title>
+        <title>Parsing JSON</title>
+        <link href="hw2.css" type="text/css" rel="stylesheet" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
 		<script src="hw2.js" type="text/javascript"></script>
 	</head>
 <body>
-    <label for="user">Input user ID</label>
-    <input type="text" id="user">
-    <button id="submit">Submit</button>
+    <div class="forminput">
+        <label for="user">Input user ID</label>
+        <input type="text" id="user">
+        <button id="submit">Submit</button>
+    </div>
+
     <hr>
-    <ul>
-        <li><label for="user_name">Username: </label><input type="text" id="user_name" readonly="readonly"></li>
-        <li><label for="user_email">Email: </label><input type="text" id="user_email" readonly="readonly"></li>
-        <li><label for="user_address">Address: </label><input type="text" id="user_address" readonly="readonly"></li>
-    </ul>
-    <table id="posts">
-        <th>Posts</th>
-        <th>Posts</th>
+    <div class="profile">
+        <ul>
+            <li><label for="user_name">Username: </label></li>
+            <li><input type="text" id="user_name" readonly="readonly"></li>
+            <li><label for="user_email">Email: </label></li>
+            <li><input type="text" id="user_email" readonly="readonly"></li>
+            <li><label for="user_address">Address: </li>
+            <li><input type="text" id="user_address" readonly="readonly"></label></li>
+            <li><label for="zip_code">Zip code:</li>
+            <li><input type="text" id="zip_code" readonly="readonly"></label></li>
+        </ul>
+    </div>
 
-        <tr><td>11111</td></tr>
-    </table>
+    <h2>Posts</h2>
+    <table id="posts" style="width:100%"></table>
 
+    <h2>Comments</h2>
+    <table id="comments"></table>
 
+    <br>
     <hr>
     <footer>
         <div id="footer">

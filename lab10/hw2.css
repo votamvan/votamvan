@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    line-height: 1;
+    box-sizing: border-box;
+}
+
+.forminput, .profile {
+    margin: 1%;
+}
+
+ul input {
+    width: 50%;
+}
+
+ul, li {
+    list-style-type: none;
+    margin: 1%;
+}
