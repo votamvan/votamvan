@@ -1,7 +1,7 @@
 $(function() {
     "use strict";
 
-    var baseUrl = "http://jsonplaceholder.typicode.com/";
+    var baseUrl = "https://jsonplaceholder.typicode.com/";
 	$('#submit').click(function() {
         clearPosts();
         clearComments();
