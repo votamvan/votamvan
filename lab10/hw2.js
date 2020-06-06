@@ -3,9 +3,10 @@ $(function() {
 
     var baseUrl = "http://jsonplaceholder.typicode.com/";
 	$('#submit').click(function() {
-        $("#posts").empty();
-        $("#comments").empty();
-        var info_path = 'users/'+$('#user').val();
+        clearPosts();
+        clearComments();
+        var userId = $('#user').val();
+        var info_path = 'users/'+ userId;
 		$.ajax({
 			'url': baseUrl + info_path,
 			'type': 'GET',
@@ -13,7 +14,7 @@ $(function() {
 			'error': ajaxFailure
         });
         
-        var post_path = 'posts?userId='+$('#user').val();
+        var post_path = 'posts?userId=' + userId;
         $.ajax({
 			'url': baseUrl + post_path,
 			'type': 'GET',
@@ -28,19 +29,17 @@ $(function() {
 
     function userSuccess(data) {
         console.log(data);
+        var addr = data.address;
         $('#user_name').val(data.username);
         $('#user_email').val(data.email);
-        var addr = data.address;
         $('#user_address').val(addr.suite + " " + addr.street + " " + addr.city);
         $('#zip_code').val(addr.zipcode);
     }
 
     function postSuccess(data) {
         console.log(data);
-        $("#posts").empty();
-        $("<tr><th>Id</th><th>Title</th><th>Content</th></tr>").prependTo("#posts");
+        clearPosts();
         $.each(data, function(index, value){
-            console.log(value.id, value.title, value.body);
             var row_data = `<tr><td>${value.id}</td><td>${value.title}</td><td>${value.body}</td><td>
                             <button id="p${value.id}">Show comments</button></td></tr>`;
             $('#posts tr:last').after(row_data);
@@ -60,14 +59,20 @@ $(function() {
         }
         var commentSuccess = function(data){
             console.log(data);
-            $("#comments").empty();
-            $("<tr><th>Id</th><th>Name</th><th>Content</th></tr>").prependTo("#comments");
+            clearComments();
             var commentTbl = document.getElementById('comments');
             $.each(data, function(index, value){
-                console.log(value.id, value.name, value.email, value.body);
                 var row_data = `<tr><td>${value.id}</td><td>${value.name}</td><td>${value.email}</td><td>${value.body}</td></tr>`; 
                 $('#comments tr:last').after(row_data);
             });
         };
     }
+    var clearPosts = function() {
+        $("#posts").empty();
+        $("<tr><th>id</th><th>title</th><th>content</th></tr>").prependTo("#posts");
+    };
+    var clearComments = function() {
+        $("#comments").empty();
+        $("<tr><th>id</th><th>name</th><th>email</th><th>content</th></tr>").prependTo("#comments");
+    };
 });
